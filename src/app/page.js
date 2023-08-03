@@ -17,12 +17,15 @@ export default function HomePage() {
     },
   };
 
+  const [theme, setTheme] = useState(THEMSES.LIGHT);
+
   const setLightTheme = () => {};
   const setDarkTheme = () => {};
   const toggleTheme = () => {};
 
   return (
-    <div>
+    <div style={{backgronfColor: theme.bgColor, minHeight:"100vh"}}>
+    <ThemeContext.Provider value={{ theme }}>
       <Header />
       <Detail />
       <Controller />
